@@ -19,8 +19,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
-  <div class="container mt-3">
-      <h2>UPDATE DATA MAHASISWA FAKULTAS TEKNIK</h2>
+  <div class="container mt-3 col-md-6 py-5">
+      <h2 class="my-3">UPDATE DATA MAHASISWA FAKULTAS TEKNIK</h2>
       <form action="index.php" method="post">
           <div class="mb-3">
             <input type="hidden" id="disabledTextInput" class="form-control" value="<?php echo $id?>" name="dataId">

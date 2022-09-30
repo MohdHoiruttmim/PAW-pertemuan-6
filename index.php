@@ -51,10 +51,10 @@ if(isset($_POST['namaUpdate'])){
 </head>
 <body>
 
-<div class="container mt-3">
+<div class="container mt-3 py-5">
   <h2>DATA MAHASISWA FAKUTAS TEKNIK</h2>
   <a href="form.php">
-    <button type="button" class="btn btn-sm btn-success">Tambah</button>
+    <button type="button" class="btn btn-sm btn-success px-3 py-2 my-3">Tambah</button>
   </a>
   
   <div class="table-responsive">
