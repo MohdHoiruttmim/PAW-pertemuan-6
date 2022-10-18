@@ -89,7 +89,7 @@ if(isset($_POST['namaUpdate'])){
             <?php 
               echo "<a href='index.php?id=$id'>"; 
             ?>
-              <button type="button" class="btn btn-sm btn-danger">Delete</button>
+              <button type="button" class="btn btn-sm btn-danger" onclick="return confirm('apakah anda yakin mengahapus data ini?')">Delete</button>
             </a>
           </td>
         </tr>

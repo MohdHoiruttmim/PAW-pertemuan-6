@@ -7,6 +7,9 @@
             WHERE id_mhs = $id";
     $result = mysqli_query($koneksi, $sql);
     $data = mysqli_fetch_assoc($result);
+
+    $sql1 = "SELECT * FROM tbl_prodi";
+    $result1 = mysqli_query($koneksi, $sql1);
   }
 ?>
 
@@ -36,45 +39,13 @@
           <div class="mb-3">
             <label for="prodi" class="form-label">Program Studi</label>
           <select class="form-select" aria-label="Default select example" name="prodiUpdate">
-              <?php if($data['id_prodi']=='1'){?>
-                <option value="1" selected>T. Informatika</option>
-                <option value="2">Sistem Informasi</option>
-                <option value="3">Teknik Industri</option>
-                <option value="4">Teknik Mesin</option>
-                <option value="5">Teknik Elektronika</option>
-              <?php }?>
-              
-              <?php if($data['id_prodi']=='2'){?>
-                <option value="1">T. Informatika</option>
-                <option value="2" selected>Sistem Informasi</option>
-                <option value="3">Teknik Industri</option>
-                <option value="4">Teknik Mesin</option>
-                <option value="5">Teknik Elektronika</option>
-              <?php }?>
-                
-              <?php if($data['id_prodi']=='3'){?>
-                <option value="1">T. Informatika</option>
-                <option value="2">Sistem Informasi</option>
-                <option value="3" selected>Teknik Industri</option>
-                <option value="4">Teknik Mesin</option>
-                <option value="5">Teknik Elektronika</option>
-              <?php }?>
-
-              <?php if($data['id_prodi']=='4'){?>
-                <option value="1">T. Informatika</option>
-                <option value="2">Sistem Informasi</option>
-                <option value="3">Teknik Industri</option>
-                <option value="4" selected>Teknik Mesin</option>
-                <option value="5">Teknik Elektronika</option>
-              <?php }?>
-
-              <?php if($data['id_prodi']=='5'){?>
-                <option value="1">T. Informatika</option>
-                <option value="2">Sistem Informasi</option>
-                <option value="3">Teknik Industri</option>
-                <option value="4">Teknik Mesin</option>
-                <option value="5" selected>Teknik Elektronika</option>
-              <?php }?>
+            <?php while ($data1 = mysqli_fetch_assoc($result1)){ ?>
+              <?php if($data1['id_prdi'] == $data['id_prodi']) {?>
+                <option value="<?php echo $data1['id_prdi']?>" selected><?php echo $data1['nama_prodi']?></option>
+              <?php } else {?>
+                <option value="<?php echo $data1['id_prdi']?>"><?php echo $data1['nama_prodi']?></option>
+              <?php } ?>
+            <?php } ?>
           </select>
           </div>
           <button type="submit" class="btn btn-primary">Update</button>
